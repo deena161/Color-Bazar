@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Circular Progress Bar</title>
+  <style>
+    *, *:before, *:after {
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #ecf0f1;
+    }
+
+    .circle {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: #9b59b6;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #3498db;
+      clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 50% 0%, 0% 0%);
+      transform-origin: 100% 50%;
+      transform: rotate(0deg);
+      transition: transform 0.3s ease;
+    }
+
+    .degree-display {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="circle" id="circle">
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="degree-display" id="degreeDisplay">0°</div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var circle = document.getElementById("circle");
+      var progressBar = document.getElementById("progressBar");
+      var degreeDisplay = document.getElementById("degreeDisplay");
+
+      var isDragging = false;
+
+      circle.addEventListener("mousedown", function (e) {
+        isDragging = true;
+        updateDegree(e);
+      });
+
+      document.addEventListener("mouseup", function () {
+        isDragging = false;
+      });
+
+      document.addEventListener("mousemove", function (e) {
+        if (isDragging) {
+          updateDegree(e);
+        }
+      });
+
+      function updateDegree(e) {
+        var rect = circle.getBoundingClientRect();
+        var centerX = rect.left + rect.width / 2;
+        var centerY = rect.top + rect.height / 2;
+
+        var angle = Math.atan2(e.clientY - centerY, e.clientX - centerX) * (180 / Math.PI);
+        angle += 90; // Adjust the starting angle
+        angle = (angle + 360) % 360; // Normalize angle to be between 0 and 360
+
+        progressBar.style.transform = "rotate(" + angle + "deg)";
+        degreeDisplay.textContent = Math.round(angle) + "°";
+      }
+    });
+  </script>
+</body>
+</html>

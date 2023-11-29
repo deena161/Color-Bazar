@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Bazar-Linear</title>
+  <link rel="icon" href="images/icon.png">
+  <link rel="stylesheet" href="mainlinear.css">
+</head>
+
+<body>
+
+  <div class="head">
+    <div class="head2">
+      <img src="images/icon.png" alt="Color Bazar icon" title="Color Bazar" width="50px" height="50px">
+      <h1>Color Bazar</h1>
+    </div>
+    <div class="auto">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="colorcode.html">Color Codes</a></li>
+        <li><a href="mainlinear.html" style="color: red;">Linear Gradient</a></li>
+        <li><a href="mainradial.html">Radial Gradient</a></li>
+        <li><a href="custom.html">Customized Gradient</a></li>
+      </ol>
+    </div>
+    
+    <div class="navbar">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="color" id="change">
+    <br>
+    <div class="code" onclick="bufferText()" title="click to copy the code" id="text">
+      <p id="codes"></p>
+    </div>
+  </div>
+  <div class="edit">
+    <div class="inputs">
+      <input type="color" class="color1" value="#ee9ca7" title="Select Color1">
+      <input type="color" class="color2" value="#ec8994" title="Select Color2">
+    </div>
+    <div class="select_color">
+      <div class="select_color1" id="scolor1"></div>
+      <div class="select_color2" id="scolor2"></div>
+    </div>
+    <div class="color_code">
+      <div class="color_code1" id="sc1" title="click to copy the code" onclick="bufferText()">#ee9ca7</div>
+      <div class="color_code2" id="sc2" title="click to copy the code" onclick="bufferText()">#ec8994</div>
+    </div>
+    <div class="arrow" onclick="navigateToPage('linear.html')">
+      <h3> More Linear Gradients</h3>
+    </div>
+  </div>
+
+
+
+  <script src="mainlinear.js"></script>
+</body>
+
+</html>

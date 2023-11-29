@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Bazar-Customized Gradient</title>
+    <link rel="stylesheet" href="custom.css">
+    <link rel="icon" href="images/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="head">
+        <div class="head2">
+            <img src="images/icon.png" alt="Color Bazar icon" title="Color Bazar" width="50px" height="50px">
+            <h1>Color Bazar</h1>
+        </div>
+        <div class="auto">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="colorcode.html">Color Codes</a></li>
+                <li><a href="mainlinear.html">Linear Gradient</a></li>
+                <li><a href="mainradial.html">Radial Gradient</a></li>
+                <li><a href="custom.html" style="color: red;">Customized Gradient</a></li>
+            </ol>
+        </div>
+
+        <div class="navbar">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+
+    </div>
+
+    <div class="middle"></div>
+
+    <div class="body">
+        <div class="top">
+            <div class="display" title="Click to see the code"></div>
+            <div class="display2" title="Click to see the code"></div>
+        </div>
+
+
+
+        <br><br><br>
+
+        <div class="top">
+
+            <div class="access">
+                <div class="arrow">
+                    <i class="fa-solid fa-arrow-up"></i>
+                    <i class="fa-solid fa-arrow-right"></i>
+                    <i class="fa-solid fa-arrow-down"></i>
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <i class="fa-solid fa-arrow-up rightup"></i>
+                    <i class="fa-solid fa-arrow-up rightdown"></i>
+                    <i class="fa-solid fa-arrow-up leftup"></i>
+                    <i class="fa-solid fa-arrow-down leftdown"></i>
+                </div>
+
+                <input type="range" min="0" max="360" value="0" class="slider" id="myRange"
+                    oninput="sliderChange(this.value)">
+                <div id="value">0 deg</div>
+
+                <h2>Linear Gradient Code</h2>
+                <p id="code">Current Gradient Background: rgba(0, 0, 0, 0) linear-gradient(to top, rgb(247, 112, 98) 0%,
+                    rgb(254, 81, 150) 100%) repeat scroll 0% 0% / auto padding-box border-box</p>
+            </div>
+            <div class="access2">
+                <br> <br><br>
+                <input type="range" min="0" max="100" value="0" class="slider2" id="myRange2">
+                <div id="value2">X axis 0%</div> <br>
+                <input type="range" min="0" max="100" value="0" class="slider3" id="myRange3">
+                <div id="value3">Y axis 0%</div>
+                <h2 id="h2">Radial Gradient Code</h2>
+                <p id="code2">Current Gradient Background: rgba(0, 0, 0, 0) linear-gradient(to top, rgb(247, 112, 98)
+                    0%,
+                    rgb(254, 81, 150) 100%) repeat scroll 0% 0% / auto padding-box border-box</p>
+            </div>
+        </div>
+
+        <div class="in">
+            <div class="get">
+                <div class="custom">
+                    <input type="color" onchange="updateHexColor(this)">
+                    <div class="hex">#000000</div>
+                    <div class="delete" onclick="deleteCustom(this)"></div>
+                </div>
+            </div>
+
+            <div class="additional" onclick="createDuplicate()">
+                <div class="add"></div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <script src="custom.js"></script>
+</body>
+
+</html>
